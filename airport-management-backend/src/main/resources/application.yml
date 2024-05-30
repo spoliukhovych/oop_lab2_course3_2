@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: ${DB_USERNAME:user1}
+    password: ${DB_PASSWORD:12345}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/airport-management-db}
+    driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: db/changelog-master.xml
+    enabled: false
